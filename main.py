@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 import requests
-import os
 
 app = Flask(__name__)
 
@@ -34,5 +33,10 @@ def index():
 
     return render_template('index.html')
 
+@app.route('/start', methods=['GET'])
+def start():
+    return "The application has started!"
+
 if __name__ == '__main__':
     app.run(debug=True)
+
